@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mi Presupuesto</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- =====================================
+         ENCABEZADO
+         ===================================== -->
+
+    <header class="encabezado">
+
+        <div>
+
+            <h1>💰 Mi Presupuesto</h1>
+
+            <p>
+                Organizá tu dinero de forma simple.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         NAVEGACIÓN
+         ===================================== -->
+
+    <nav class="navegacion">
+
+        <button
+            class="nav-btn activo"
+            data-seccion="inicio"
+        >
+            🏠 Inicio
+        </button>
+
+
+        <button
+            class="nav-btn"
+            data-seccion="presupuesto"
+        >
+            💰 Presupuesto
+        </button>
+
+
+        <button
+            class="nav-btn"
+            data-seccion="gastos"
+        >
+            💳 Gastos
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         INICIO
+         ===================================== -->
+
+    <main>
+
+
+        <section
+            id="inicio"
+            class="seccion activa"
+        >
+
+            <div class="titulo-seccion">
+
+                <h2>
+                    🏠 Inicio
+                </h2>
+
+                <p>
+                    Resumen de tu estado financiero actual.
+                </p>
+
+            </div>
+
+
+
+            <div
+                id="resumenInicio"
+                class="grid-resumen"
+            >
+
+                <div class="tarjeta-resumen">
+
+                    <span>💰 Ingreso</span>
+
+                    <strong id="inicioIngreso">
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <div class="tarjeta-resumen">
+
+                    <span>🏠 Gastos fijos</span>
+
+                    <strong id="inicioFijos">
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <div class="tarjeta-resumen">
+
+                    <span>💳 Gastos realizados</span>
+
+                    <strong id="inicioGastos">
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <div class="tarjeta-resumen">
+
+                    <span>🏦 Ahorro</span>
+
+                    <strong id="inicioAhorro">
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <div class="tarjeta-resumen destacado">
+
+                    <span>💵 Dinero restante</span>
+
+                    <strong id="inicioRestante">
+                        $0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                id="estadoFinanciero"
+                class="estado-financiero"
+            >
+
+                <strong>
+                    📊 Todavía no calculaste tu presupuesto.
+                </strong>
+
+                <p>
+                    Completá tu presupuesto para ver tu estado.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PRESUPUESTO
+             ===================================== -->
+
+        <section
+            id="presupuesto"
+            class="seccion"
+        >
+
+            <div class="titulo-seccion">
+
+                <h2>
+                    💰 Presupuesto
+                </h2>
+
+                <p>
+                    Calculá cómo dividir tu dinero cada mes.
+                </p>
+
+            </div>
+
+
+
+            <!-- DATOS PRINCIPALES -->
+
+            <div class="tarjeta">
+
+                <label>
+                    Ingreso mensual
+                </label>
+
+
+                <input
+                    type="number"
+                    id="ingreso"
+                    placeholder="Ej: 1000000"
+                >
+
+
+                <label>
+                    Gastos fijos
+                </label>
+
+
+                <input
+                    type="number"
+                    id="gastosFijos"
+                    placeholder="Ej: 300000"
+                >
+
+
+                <button
+                    id="btnCalcular"
+                    class="boton-principal"
+                >
+
+                    CALCULAR PRESUPUESTO
+
+                </button>
+
+            </div>
+
+
+
+            <!-- RESULTADO -->
+
+            <div
+                class="tarjeta resultado"
+                id="resultado"
+            >
+
+                <h2>
+                    📊 Tu presupuesto
+                </h2>
+
+                <p>
+                    Primero Completá los datos y despues presioná
+                    "Calcular presupuesto" sino como queres ver los resultados "ᵖᵃᵛᵒᵗᵉ"
+                </p>
+
+            </div>
+
+
+
+            <!-- DISTRIBUCIÓN -->
+
+            <div
+                class="tarjeta"
+                id="distribucion"
+            >
+
+                <h2>
+                    📋 Distribución
+                </h2>
+
+
+                <div class="fila-configuracion">
+
+                    <span>
+                        🏦 Ahorro
+                    </span>
+
+
+                    <div>
+
+                        <input
+                            type="number"
+                            id="porcentajeAhorro"
+                            value="20"
+                            min="0"
+                            max="100"
+                        >
+
+                        <span>%</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="fila-configuracion">
+
+                    <span>
+                        🍔 Comida
+                    </span>
+
+
+                    <div>
+
+                        <input
+                            type="number"
+                            id="porcentajeComida"
+                            value="15"
+                            min="0"
+                            max="100"
+                        >
+
+                        <span>%</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="fila-configuracion">
+
+                    <span>
+                        🚗 Vehículo
+                    </span>
+
+
+                    <div class="input-monto">
+
+                        <span>$</span>
+
+                        <input
+                            type="number"
+                            id="montoVehiculo"
+                            value="0"
+                            min="0"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="fila-configuracion">
+
+                    <span>
+                        🎯 Extra
+                    </span>
+
+
+                    <div class="input-monto">
+
+                        <span>$</span>
+
+                        <input
+                            type="number"
+                            id="montoExtra"
+                            value="0"
+                            min="0"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                id="botonEditarDistribucion"
+                class="tarjeta"
+                style="display:none;"
+            >
+
+                <button
+                    id="btnEditarDistribucion"
+                    class="boton-secundario"
+                >
+
+                    ✏️ Editar distribución
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CATEGORÍAS -->
+
+            <div class="tarjeta">
+
+                <h2>
+                    📋 Mis categorías
+                </h2>
+
+
+                <div id="categorias">
+
+                    <p>
+                        Todavía no agregaste categorías.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="btnAgregarCategoria"
+                    class="boton-secundario"
+                >
+
+                    ＋ Agregar categoría
+
+                </button>
+
+            </div>
+
+
+
+            <!-- HISTORIAL -->
+
+            <div class="tarjeta">
+
+                <h2>
+                    📅 Historial de meses
+                </h2>
+
+
+                <button
+                    id="btnGuardarMes"
+                    class="boton-principal"
+                >
+
+                    💾 Guardar mes actual
+
+                </button>
+
+
+                <div id="historial">
+
+                    <p>
+                        Todavía no guardaste ningún mes.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DETALLES HISTORIAL -->
+
+            <div
+                id="detalleMes"
+                class="tarjeta detalle-mes"
+                style="display:none;"
+            >
+
+                <div class="detalle-header">
+
+                    <div>
+
+                        <h2 id="detalleMesTitulo">
+                            📅 Detalles del mes
+                        </h2>
+
+                        <p id="detalleMesFecha"></p>
+
+                    </div>
+
+
+                    <button
+                        id="btnCerrarDetalle"
+                        class="boton-cerrar"
+                    >
+                        ✕
+                    </button>
+
+                </div>
+
+
+                <hr>
+
+
+                <div
+                    id="detalleContenido"
+                ></div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             GASTOS
+             ===================================== -->
+
+        <section
+            id="gastos"
+            class="seccion"
+        >
+
+            <div class="titulo-seccion">
+
+                <h2>
+                    💳 Gastos
+                </h2>
+
+                <p>
+                    Registrá tus gastos reales y controlá
+                    cuánto llevás utilizado.
+                </p>
+
+            </div>
+
+
+
+            <div class="tarjeta">
+
+                <button
+                    id="btnAgregarGasto"
+                    class="boton-principal"
+                >
+
+                    ＋ Agregar gasto
+
+                </button>
+
+            </div>
+
+
+
+            <!-- RESUMEN DE GASTOS -->
+
+            <div
+                id="resumenGastos"
+                class="grid-resumen"
+            ></div>
+
+
+
+            <!-- LISTA -->
+
+            <div class="tarjeta">
+
+                <h2>
+                    📋 Gastos registrados
+                </h2>
+
+
+                <div id="listaGastos">
+
+                    <p>
+                        Todavía no registraste ningún gasto.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         MODAL CATEGORÍA
+         ===================================== -->
+
+    <div
+        id="modalCategoria"
+        class="modal"
+    >
+
+        <div class="modal-contenido">
+
+            <h2 id="tituloModalCategoria">
+                ➕ Nueva categoría
+            </h2>
+
+
+            <label>
+                Nombre
+            </label>
+
+
+            <input
+                type="text"
+                id="nombreCategoria"
+                placeholder="Ej: Hijos"
+            >
+
+
+            <label>
+                Monto mensual
+            </label>
+
+
+            <input
+                type="number"
+                id="montoCategoria"
+                placeholder="Ej: 80000"
+                min="0"
+            >
+
+
+            <div class="modal-botones">
+
+                <button
+                    id="btnCancelarCategoria"
+                    class="boton-cancelar"
+                >
+                    Cancelar
+                </button>
+
+
+                <button
+                    id="btnGuardarCategoria"
+                    class="boton-principal"
+                >
+                    Guardar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         MODAL GASTO
+         ===================================== -->
+
+    <div
+        id="modalGasto"
+        class="modal"
+    >
+
+        <div class="modal-contenido">
+
+            <h2 id="tituloModalGasto">
+                💳 Nuevo gasto
+            </h2>
+
+
+            <label>
+                Nombre del gasto
+            </label>
+
+
+            <input
+                type="text"
+                id="nombreGasto"
+                placeholder="Ej: Supermercado"
+            >
+
+
+            <label>
+                Monto
+            </label>
+
+
+            <input
+                type="number"
+                id="montoGasto"
+                placeholder="Ej: 25000"
+                min="0"
+            >
+
+
+            <label>
+                Categoría
+            </label>
+
+
+            <select id="categoriaGasto">
+
+                <option value="comida">
+                    🍔 Comida
+                </option>
+
+                <option value="vehiculo">
+                    🚗 Vehículo
+                </option>
+
+                <option value="extra">
+                    🎯 Extra
+                </option>
+
+                <option value="ahorro">
+                    🏦 Ahorro
+                </option>
+
+            </select>
+
+
+            <label>
+                Fecha
+            </label>
+
+
+            <input
+                type="date"
+                id="fechaGasto"
+            >
+
+
+            <div class="modal-botones">
+
+                <button
+                    id="btnCancelarGasto"
+                    class="boton-cancelar"
+                >
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    id="btnGuardarGasto"
+                    class="boton-principal"
+                >
+
+                    Guardar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
